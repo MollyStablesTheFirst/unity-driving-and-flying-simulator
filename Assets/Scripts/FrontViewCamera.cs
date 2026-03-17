@@ -1,19 +1,20 @@
 using UnityEngine;
 
-public class FollowPlayer : MonoBehaviour
+public class FrontViewCamera : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(0, 6, -9);
-
+    private Vector3 offset = new Vector3(0, 2, 1);
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
     }
-    // LateUpdate is called after Update
+
+    // Update is called once per frame
     void LateUpdate()
     {
         //Offset the camera behind the player by adding to the player's position
-        transform.position = player.transform.position + player.transform.rotation* offset;
+        transform.position = player.transform.position + player.transform.rotation * offset;
         //Rotating the camera
         transform.rotation = player.transform.rotation;
         transform.Rotate(15f, 0f, 0f);
