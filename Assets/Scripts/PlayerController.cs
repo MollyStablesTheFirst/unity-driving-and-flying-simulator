@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private float turnspeed = 25.0f;
     private float horizontalInput;
     private float verticalInput;
+    //Local Multiplayer
+    public string inputID;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,8 +20,9 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Player input
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal1" + inputID);
+        verticalInput = Input.GetAxis("Vertical1" + inputID);
+
         // Move the vehicle forward 
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
         // Turn vehicle
