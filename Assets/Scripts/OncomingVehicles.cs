@@ -3,7 +3,7 @@ using UnityEngine;
 public class OncomingVehicles : MonoBehaviour
 {
     //Private variables
-    private float speed = 15.0f;
+    private float speed = 15f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

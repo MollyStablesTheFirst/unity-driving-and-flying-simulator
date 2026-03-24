@@ -2700,6 +2700,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &396504294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396504284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82bd958f80d1ab4595796553ab4c746, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  inputID: 2
 --- !u!1 &401450315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8780424320546655309, guid: 71782582b9d2cac4cba5251a3b767d13, type: 3}
@@ -3204,7 +3217,6 @@ GameObject:
   m_Component:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
-  - component: {fileID: 534669903}
   - component: {fileID: 534669907}
   - component: {fileID: 534669908}
   m_Layer: 0
@@ -3214,14 +3226,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &534669903
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
 --- !u!20 &534669904
 Camera:
   m_ObjectHideFlags: 0
@@ -3607,6 +3611,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraManager
   mainCam: {fileID: 534669904}
   frontCam: {fileID: 602634141}
+  player2mainCam: {fileID: 936655282}
+  player2frontCam: {fileID: 628805794}
 --- !u!4 &588646732
 Transform:
   m_ObjectHideFlags: 0
@@ -3632,7 +3638,6 @@ GameObject:
   m_Component:
   - component: {fileID: 602634142}
   - component: {fileID: 602634141}
-  - component: {fileID: 602634140}
   - component: {fileID: 602634139}
   - component: {fileID: 602634143}
   m_Layer: 0
@@ -3686,14 +3691,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &602634140
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602634138}
-  m_Enabled: 1
 --- !u!20 &602634141
 Camera:
   m_ObjectHideFlags: 0
@@ -3754,7 +3751,7 @@ Transform:
   m_GameObject: {fileID: 602634138}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 2.1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.1, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3773,6 +3770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrontViewCamera
   player: {fileID: 1091410055}
+  cam: {fileID: 602634141}
 --- !u!1 &628805790
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,7 +3781,6 @@ GameObject:
   m_Component:
   - component: {fileID: 628805795}
   - component: {fileID: 628805794}
-  - component: {fileID: 628805793}
   - component: {fileID: 628805792}
   - component: {fileID: 628805791}
   m_Layer: 0
@@ -3806,6 +3803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FrontViewCamera
   player: {fileID: 396504284}
+  cam: {fileID: 628805794}
 --- !u!114 &628805792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3850,14 +3848,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &628805793
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 628805790}
-  m_Enabled: 1
 --- !u!20 &628805794
 Camera:
   m_ObjectHideFlags: 0
@@ -3885,9 +3875,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
-    width: 1
+    width: 0.5
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -3918,7 +3908,7 @@ Transform:
   m_GameObject: {fileID: 628805790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 3.3, z: 1}
+  m_LocalPosition: {x: 0, y: 3.3, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5192,7 +5182,6 @@ GameObject:
   m_Component:
   - component: {fileID: 936655283}
   - component: {fileID: 936655282}
-  - component: {fileID: 936655281}
   - component: {fileID: 936655280}
   - component: {fileID: 936655279}
   m_Layer: 0
@@ -5259,14 +5248,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!81 &936655281
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 936655278}
-  m_Enabled: 1
 --- !u!20 &936655282
 Camera:
   m_ObjectHideFlags: 0
@@ -5826,6 +5807,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 118600, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
       insertIndex: -1
       addedObject: {fileID: 396504289}
+    - targetCorrespondingSourceObject: {fileID: 118600, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 396504294}
   m_SourcePrefab: {fileID: 100100000, guid: 68840c673a0b18e41a044ed077548d55, type: 3}
 --- !u!1001 &995994361
 PrefabInstance:
@@ -6278,7 +6262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82bd958f80d1ab4595796553ab4c746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
-  inputID: 
+  inputID: 1
 --- !u!54 &1091410061
 Rigidbody:
   m_ObjectHideFlags: 0

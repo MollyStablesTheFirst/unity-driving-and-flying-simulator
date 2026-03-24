@@ -3,10 +3,19 @@ using UnityEngine;
 public class FrontViewCamera : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 offset = new Vector3(0, 2, 1);
+    private Vector3 offset;
+    string id ;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        id = player.GetComponent<PlayerController>().inputID;
+        if (id == "1")
+        {
+            offset = new Vector3(0, 2.1f, 1);
+        }
+        else if (id == "2") {
+            offset = new Vector3(0, 3.3f, 1);
+        }
         
     }
 
