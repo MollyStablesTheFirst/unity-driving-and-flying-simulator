@@ -4,7 +4,7 @@ public class FrontViewCamera : MonoBehaviour
 {
     public GameObject player;
     private Vector3 offset;
-    string id ;
+    private string id ;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
